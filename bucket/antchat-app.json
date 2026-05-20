@@ -35,10 +35,11 @@
       "/S"
     ]
   },
+  "depends": "antchat",
   "bin": [
     [
       "ant-chat-desktop.exe",
-      "Antchat"
+      "antchat-app"
     ]
   ],
   "shortcuts": [
