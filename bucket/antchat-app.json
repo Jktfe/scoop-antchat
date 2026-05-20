@@ -1,16 +1,21 @@
 {
-  "version": "0.0.0",
-  "description": "Native Windows antchat — Tauri 2 + Svelte 5 (Scoop-distributed, unsigned per JWPK no-cert decision)",
+  "version": "0.1.0",
+  "description": "Native Windows antchat \u2014 Tauri 2 + Svelte 5 (Scoop-distributed, unsigned per JWPK no-cert decision)",
   "homepage": "https://github.com/Jktfe/antchat-windows",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Jktfe/antchat-windows/releases/download/v0.0.0/Antchat_0.0.0_x64-setup.exe",
-      "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      "url": "https://github.com/Jktfe/antchat-windows/releases/download/v0.1.0/Antchat_0.1.0_x64-setup.exe",
+      "hash": "b46f90ae7956f50170188f7d8aba4c7f672ab29e5f9f34aed5e5c3b80b99520a"
     }
   },
   "bin": "Antchat.exe",
-  "shortcuts": [["Antchat.exe", "Antchat"]],
+  "shortcuts": [
+    [
+      "Antchat.exe",
+      "Antchat"
+    ]
+  ],
   "checkver": "github",
   "autoupdate": {
     "architecture": {
@@ -19,5 +24,5 @@
       }
     }
   },
-  "notes": "First release pending. Until then, the stub version 0.0.0 + zero-hash will be overwritten on first successful Release Windows workflow + scoop-bump PR (Jktfe/antchat-windows .github/workflows/release-windows.yml + scoop-bump.yml)."
+  "notes": "Unsigned first Windows Tauri build. Install via Scoop; direct EXE launch may show SmartScreen."
 }
