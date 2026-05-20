@@ -14,6 +14,19 @@
     "args": [
       "/S",
       "/D=$dir"
+    ],
+    "script": [
+      "$candidates = @(",
+      "  (Join-Path $env:LOCALAPPDATA 'Antchat'),",
+      "  (Join-Path (Join-Path $env:LOCALAPPDATA 'Programs') 'Antchat')",
+      ")",
+      "$installed = $candidates | Where-Object { (Test-Path (Join-Path $_ 'Antchat.exe') -PathType Leaf) } | Select-Object -First 1",
+      "if ($installed -and !(Test-Path (Join-Path $dir 'Antchat.exe') -PathType Leaf)) {",
+      "  Copy-Item -Path (Join-Path $installed '*') -Destination $dir -Recurse -Force",
+      "}",
+      "if (!(Test-Path (Join-Path $dir 'Antchat.exe') -PathType Leaf)) {",
+      "  throw \"Antchat.exe was not produced in $dir and was not found in Tauri default install locations: $($candidates -join ', ')\"",
+      "}"
     ]
   },
   "uninstaller": {
