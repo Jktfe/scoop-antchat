@@ -20,12 +20,12 @@
       "  (Join-Path $env:LOCALAPPDATA 'Antchat'),",
       "  (Join-Path (Join-Path $env:LOCALAPPDATA 'Programs') 'Antchat')",
       ")",
-      "$installed = $candidates | Where-Object { (Test-Path (Join-Path $_ 'Antchat.exe') -PathType Leaf) } | Select-Object -First 1",
-      "if ($installed -and !(Test-Path (Join-Path $dir 'Antchat.exe') -PathType Leaf)) {",
+      "$installed = $candidates | Where-Object { (Test-Path (Join-Path $_ 'ant-chat-desktop.exe') -PathType Leaf) } | Select-Object -First 1",
+      "if ($installed -and !(Test-Path (Join-Path $dir 'ant-chat-desktop.exe') -PathType Leaf)) {",
       "  Copy-Item -Path (Join-Path $installed '*') -Destination $dir -Recurse -Force",
       "}",
-      "if (!(Test-Path (Join-Path $dir 'Antchat.exe') -PathType Leaf)) {",
-      "  throw \"Antchat.exe was not produced in $dir and was not found in Tauri default install locations: $($candidates -join ', ')\"",
+      "if (!(Test-Path (Join-Path $dir 'ant-chat-desktop.exe') -PathType Leaf)) {",
+      "  throw \"ant-chat-desktop.exe was not produced in $dir and was not found in Tauri default install locations: $($candidates -join ', ')\"",
       "}"
     ]
   },
@@ -35,10 +35,15 @@
       "/S"
     ]
   },
-  "bin": "Antchat.exe",
+  "bin": [
+    [
+      "ant-chat-desktop.exe",
+      "Antchat"
+    ]
+  ],
   "shortcuts": [
     [
-      "Antchat.exe",
+      "ant-chat-desktop.exe",
       "Antchat"
     ]
   ],
