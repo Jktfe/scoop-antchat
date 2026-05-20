@@ -5,9 +5,22 @@
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Jktfe/antchat-windows/releases/download/v0.1.0/Antchat_0.1.0_x64-setup.exe",
+      "url": "https://github.com/Jktfe/antchat-windows/releases/download/v0.1.0/Antchat_0.1.0_x64-setup.exe#/setup.exe",
       "hash": "b46f90ae7956f50170188f7d8aba4c7f672ab29e5f9f34aed5e5c3b80b99520a"
     }
+  },
+  "installer": {
+    "file": "setup.exe",
+    "args": [
+      "/S",
+      "/D=$dir"
+    ]
+  },
+  "uninstaller": {
+    "file": "uninstall.exe",
+    "args": [
+      "/S"
+    ]
   },
   "bin": "Antchat.exe",
   "shortcuts": [
@@ -20,7 +33,7 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/Jktfe/antchat-windows/releases/download/v$version/Antchat_$version_x64-setup.exe"
+        "url": "https://github.com/Jktfe/antchat-windows/releases/download/v$version/Antchat_$version_x64-setup.exe#/setup.exe"
       }
     }
   },
