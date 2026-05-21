@@ -1,0 +1,25 @@
+{
+  "version": "0.1.4",
+  "description": "Fresh-ANT CLI — agent coordination + chat from your terminal",
+  "homepage": "https://github.com/Jktfe/a-nice-terminal",
+  "license": "AGPL-3.0-or-later",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/Jktfe/a-nice-terminal/releases/download/ant-v0.1.4/ant-0.1.4-windows-x64.zip",
+      "hash": "d5b4021eb07105ec9d3736a6779a954ea4f1cb433cd77732ccac8fc823ae20be"
+    }
+  },
+  "bin": "ant.exe",
+  "checkver": {
+    "url": "https://github.com/Jktfe/a-nice-terminal/releases/latest",
+    "regex": "ant-v([\\d.]+)"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/Jktfe/a-nice-terminal/releases/download/ant-v$version/ant-$version-windows-x64.zip"
+      }
+    }
+  },
+  "notes": "Run 'ant --help' after install. Terminal routing is packaged: ant router start --room <roomId> --handle <agentHandle> --pane-id <paneId>. The Antchat GUI package depends on this CLI so local LLM desktops and terminal agents can join rooms."
+}
